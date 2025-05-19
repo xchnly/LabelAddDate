@@ -5,8 +5,8 @@ from ttkthemes import ThemedTk
 from PIL import Image, ImageDraw, ImageFont
 import pandas as pd
 
-def crop_hukum(img): return img.crop((88, 180, *img.size))
-def crop_tahanapi(img): return img.crop((88, 170, *img.size))
+def crop_hukum(img): return img.crop((0, 0, *img.size))
+def crop_tahanapi(img): return img.crop((0, 0, *img.size))
 
 def add_text(img, text, pos, size=28):
     draw = ImageDraw.Draw(img)
@@ -17,9 +17,9 @@ def add_text(img, text, pos, size=28):
 def add_tanggal_hukum(img, tanggal):
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("arial.ttf", 28)
-    draw.text((220, 640), tanggal.strftime("%Y%m%d") + "-GJ", fill="black", font=font)
-    draw.text((475, 655), tanggal.strftime("%m"), fill="black", font=font)
-    draw.text((570, 655), tanggal.strftime("%Y"), fill="black", font=font)
+    draw.text((320, 825), tanggal.strftime("%Y%m%d") + "-GJ", fill="black", font=font)
+    draw.text((615, 845), tanggal.strftime("%m"), fill="black", font=font)
+    draw.text((735, 845), tanggal.strftime("%Y"), fill="black", font=font)
     return img
 
 class LabelApp:
@@ -110,7 +110,7 @@ class LabelApp:
                     img = Image.open(tahan_path).convert("RGB")
                     img = crop_tahanapi(img)
                     label = tanggal.strftime("%Y%m%d-GJ")
-                    img = add_text(img, label, (130, 240))
+                    img = add_text(img, label, (180, 310))
                     img.save(os.path.join(tahan_folder, f"{sku}_防火标TAHANAPI.pdf"), "PDF")
                     self.log_message(f"[OK] {sku} TAHAN_API")
                 else:
