@@ -1,4 +1,4 @@
-('D:\\IT\\Python\\Code\\TambahinTanggalDong\\build\\LabelAddDate\\PYZ-00.pyz',
+('D:\\IT\\Python\\Code\\tambahintanggaldong\\build\\LabelAddDate\\PYZ-00.pyz',
  [('PIL',
    'C:\\Users\\pupu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PIL\\__init__.py',
    'PYMODULE'),
